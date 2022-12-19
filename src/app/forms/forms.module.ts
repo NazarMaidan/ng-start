@@ -6,6 +6,8 @@ import { FormsContainersModule } from "./containers/containers.module";
 
 import { FormsService } from "./services/forms.service";
 import { FormGroupDirective } from "@angular/forms";
+import { SelectComponent } from "./select/select.component";
+import { SelectGroupComponent } from "./select/select-group/select-group.component";
 
 @NgModule({
   imports: [SharedModule, FormsContainersModule, FormsRoutingModule],

@@ -1,0 +1,17 @@
+<div class="gym__list">
+  <div class="gym__header">
+    <div class="city">{{ city.place }}</div>
+    <div class="action" (click)="onToggleSelectAll()">{{ selectAllState ? "Unselect" : "Select" }}</div>
+  </div>
+  <form class="gym__checkbox-group" [formGroup]="form">
+    <ng-container formArrayName="gyms">
+      <mat-checkbox
+        class="checkbox"
+        *ngFor="let control of gymControls.controls; let i = index"
+        [formControl]="control"
+      >
+        {{ list[i] }}
+      </mat-checkbox>
+    </ng-container>
+  </form>
+</div>

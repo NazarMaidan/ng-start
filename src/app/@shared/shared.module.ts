@@ -9,6 +9,9 @@ import { SharedPipesModule } from "./pipes/pipes.module";
 import { SharedComponentsModule } from "./components/components.module";
 import { ValidationMessageModule } from "./modules/validation-message/validation-message.module";
 import { TranslateModule } from "@ngx-translate/core";
+import { ScrollingModule } from "@angular/cdk/scrolling";
+import { SelectComponent } from "../forms/select/select.component";
+import { SelectGroupComponent } from "../forms/select/select-group/select-group.component";
 
 @NgModule({
   imports: [
@@ -24,8 +27,10 @@ import { TranslateModule } from "@ngx-translate/core";
     SharedPipesModule,
 
     ValidationMessageModule,
+
+    ScrollingModule,
   ],
-  declarations: [],
+  declarations: [SelectComponent, SelectGroupComponent],
   providers: [],
   exports: [
     CommonModule,
@@ -40,6 +45,10 @@ import { TranslateModule } from "@ngx-translate/core";
     SharedPipesModule,
 
     ValidationMessageModule,
+
+    SelectComponent,
+    SelectGroupComponent,
+    ScrollingModule,
   ],
 })
 export class SharedModule {}

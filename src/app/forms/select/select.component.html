@@ -1,0 +1,19 @@
+<div class="select__wrap">
+  <div class="select__header">
+    <div class="facilities">Facilities {{ !!selectedLength ? "(" + selectedLength + ")" : "" }}</div>
+    <div class="action" (click)="onToogleSelectAll()">{{ selectedLength ? "Unselect all" : "Select all" }}</div>
+  </div>
+  <cdk-virtual-scroll-viewport appendOnly itemSize="{{ groups.length }}" class="example-viewport">
+    <div class="select__list example-item" *ngFor="let city of groups">
+      <l9-select-group
+        [city]="city"
+        [selectAllToogle]="selectAllToogle"
+        (selected)="selectedGyms($event)"
+      ></l9-select-group>
+    </div>
+  </cdk-virtual-scroll-viewport>
+
+  <div class="select__footer">
+    <button type="button" class="submit" (click)="onCreateNew()">New Facilities</button>
+  </div>
+</div>
